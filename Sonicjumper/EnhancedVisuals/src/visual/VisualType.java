@@ -71,7 +71,7 @@ public class VisualType {
 			if(catagory != VisualCatagory.shader) {
 				createResources();
 				for(ResourceLocation s : resourceArray) {
-					System.out.println(s.func_110623_a());
+					System.out.println(s.getResourcePath());
 				}
 			} else {
 				resourceArray = new ResourceLocation[] {new ResourceLocation("sonicjumper", "textures/entity/steve.png")};
@@ -132,7 +132,7 @@ public class VisualType {
 		}
 
 		if(matchedIndex > 0) {
-			File firstImage = new File(ClientProxy.getVisualsDirectory(themePack) + vt.visualCatagory.toString() + "/" + vt.visualName + "/" + new File(result.get(0).func_110623_a()).getName());
+			File firstImage = new File(ClientProxy.getVisualsDirectory(themePack) + vt.visualCatagory.toString() + "/" + vt.visualName + "/" + new File(result.get(0).getResourcePath()).getName());
 			try {
 				imageDimensions = getDimensionsOfImage(firstImage);
 			} catch (Exception e) {

@@ -184,14 +184,14 @@ public class VisualEventHandler {
 			}
 		}
 		// Add a lowhealth overlay every 15 ticks if the players health is 3 hearts or less
-		if(mc.thePlayer.func_110143_aJ() < 7.0F) {
+		if(mc.thePlayer.getHealth() < 7.0F) {
 			if(lowHealthBuffer <= 0) {
-				float f1 = (7.0F - mc.thePlayer.func_110143_aJ()) * 0.25F;
+				float f1 = (7.0F - mc.thePlayer.getHealth()) * 0.25F;
 				if(ConfigCore.grayscaleLowHealth) {
-					VisualManager.addVisual(new GrayscaleBlur(VisualType.blur, (int) (5 * (7.0F - mc.thePlayer.func_110143_aJ())), new Color(1.0F, 1.0F, 1.0F, f1 <= 0.8F ? f1 : 0.8F), false, 0.75F));
+					VisualManager.addVisual(new GrayscaleBlur(VisualType.blur, (int) (5 * (7.0F - mc.thePlayer.getHealth())), new Color(1.0F, 1.0F, 1.0F, f1 <= 0.8F ? f1 : 0.8F), false, 0.75F));
 					//VisualManager.addVisual(new GrayscaleBlur(VisualType.blur, (int) (5 * (6.0F - mc.thePlayer.func_110143_aJ())), new Color(1.0F, 1.0F, 1.0F, f1 <= 1.0F ? f1 : 1.0F), 0, 0, true, 1.0F));
 				} else {
-					VisualManager.addVisualsWithColor(VisualType.lowhealth, 1, (int) (5 * (7.0F - mc.thePlayer.func_110143_aJ())), (int) (10 * (7.0F - mc.thePlayer.func_110143_aJ())), new Color(1.0F, 1.0F, 1.0F, f1 <= 1.0F ? f1 : 1.0F));
+					VisualManager.addVisualsWithColor(VisualType.lowhealth, 1, (int) (5 * (7.0F - mc.thePlayer.getHealth())), (int) (10 * (7.0F - mc.thePlayer.getHealth())), new Color(1.0F, 1.0F, 1.0F, f1 <= 1.0F ? f1 : 1.0F));
 				}
 				lowHealthBuffer = 15;
 			} else {

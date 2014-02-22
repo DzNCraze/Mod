@@ -128,7 +128,7 @@ public class VisualManager {
     		return;
     	}
     	float rate = 0.0F;
-		float health = bleedingEntity.func_110143_aJ() - damage;
+		float health = bleedingEntity.getHealth() - damage;
 		
 		//largeRate = (health / 4) + 1.0F;
 		
