@@ -25,7 +25,6 @@ public class WetnessHandler extends BaseEnvironmentEffect {
 			float wet = ((wetness - 0.5F) * 2.0F) * 0.75F;
 			VisualManager.adjustWetOverlay(wet < 1.0F ? wet : 1.0F);
 		}
-		//System.out.println("Wetness : " + playerWetness);
 	}
 
 	@Override

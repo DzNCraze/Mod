@@ -54,7 +54,6 @@ public class VisualEventHandler {
 	
 	@ForgeSubscribe
 	public void onPlayerDamage(LivingHurtEvent e) {
-		//System.out.println(e.source.getDamageType() + " || " + e.source.getSourceOfDamage() + " || " + e.ammount);
 		if(e.source.equals(DamageSource.outOfWorld)) {
 			// If damage from void or /kill command, ignore
 			return;

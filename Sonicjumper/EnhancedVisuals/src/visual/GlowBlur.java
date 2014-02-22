@@ -28,7 +28,6 @@ public class GlowBlur extends Blur {
 			//((BoxGlowFilter) filter).setIterations(getIterations());
 			long time = Minecraft.getSystemTime();
 			BufferedImage filtered = filter.filter(scaledImage, null);
-			System.out.println("Filter Time: " + (Minecraft.getSystemTime() - time));
 			image = prepareImage(filtered);
 		}
 	}

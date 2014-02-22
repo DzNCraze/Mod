@@ -11,7 +11,6 @@ import Sonicjumper.EnhancedVisuals.src.visual.Visual;
 
 public class RenderOverlay extends RenderVisual {
 	public void doRenderVisual(Visual v, float partialTicks) {
-		//System.out.println("Rendering overlay with Alpha = " + v.getTranslucency());
 		if(v.specialRendering()) {
 			reset = true;
 		}

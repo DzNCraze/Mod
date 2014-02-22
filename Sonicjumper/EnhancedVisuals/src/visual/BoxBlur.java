@@ -23,22 +23,20 @@ public class BoxBlur extends Blur {
 			long time = Minecraft.getSystemTime();
 			long totalTime = Minecraft.getSystemTime();
 			BufferedImage screen = BlurHelper.captureScreenAsImage(EnhancedVisuals.mc.displayWidth, EnhancedVisuals.mc.displayHeight);
-			System.out.println("Capture Time: " + (Minecraft.getSystemTime() - time));
+		
 			
 			time = Minecraft.getSystemTime();
 			BufferedImage scaledImage = BlurHelper.scaleImage(screen, blurScaling);
-			System.out.println("Scale Time: " + (Minecraft.getSystemTime() - time));
+		
 			
 			((BoxBlurFilter) filter).setRadius((int) (blurRadius * translucency));
 			
 			time = Minecraft.getSystemTime();
 			BufferedImage filtered = filter.filter(scaledImage, null);
-			System.out.println("Filter Time: " + (Minecraft.getSystemTime() - time));
+		
 			
 			//time = Minecraft.getSystemTime();
 			image = prepareImage(filtered);
-			//System.out.println("Buffer Time: " + (Minecraft.getSystemTime() - time));
-			System.out.println("Total Time: " + (Minecraft.getSystemTime() - totalTime));
 		}
 	}
 	

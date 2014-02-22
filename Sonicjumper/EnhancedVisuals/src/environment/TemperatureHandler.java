@@ -22,7 +22,6 @@ public class TemperatureHandler extends BaseEnvironmentEffect {
 			public boolean runFactor() {
 				float currentWorldTemp = parent.mc.theWorld.getBiomeGenForCoords((int)Math.floor(parent.mc.thePlayer.posX), (int)Math.floor(parent.mc.thePlayer.posZ)).temperature;
 				factor = currentWorldTemp + (parent.mc.thePlayer.isBurning() ? 4.0F : 0.0F) - parent.wetnessHandler.getWetness() * (parent.mc.thePlayer.isSprinting() ? 4.0F : 1.0F);
-				System.out.println("World temp factor: " + factor);
 				return true;
 			}
 
@@ -57,7 +56,6 @@ public class TemperatureHandler extends BaseEnvironmentEffect {
 				if(temperature < 0.15F * leatherCount) {
 					factor = 0.15F * leatherCount;
 				}
-				System.out.println("Armor factor: " + factor);
 				return factor != 0.0F;
 			}
 
@@ -86,7 +84,6 @@ public class TemperatureHandler extends BaseEnvironmentEffect {
 					heat = Math.max((float) (1 / dist) * 5.0F, heat);
 				}
 				factor += heat;
-				System.out.println("Fire/Lava factor:" + factor);
 				return factor != 1.0F;
 			}
 
@@ -106,14 +103,11 @@ public class TemperatureHandler extends BaseEnvironmentEffect {
 		}
 		temperature = temperature > 2.0F ? 2.0F : temperature;
 		temperature = temperature < 0.0F ? 0.0F : temperature;
-		System.out.println("Overall temp: " + temperature);
 		if(temperature < 0.25F) {
-			//System.out.println("Adjusting freeze overlay");
 			float cold = (1.0F - (temperature * 4.0F)) * 0.75F;
 			VisualManager.adjustColdOverlay(cold < 1.0F ? cold : 1.0F);
 		}
 		if(temperature > 1.0F) {
-			//System.out.println("Adjusting burn overlay");
 			float heat = (temperature - 1.0F) * 0.75F;
 			VisualManager.adjustHeatOverlay(heat < 1.0F ? heat : 1.0F);
 		}

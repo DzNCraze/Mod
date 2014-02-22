@@ -60,7 +60,7 @@ public class Visual {
 			xOffset = 0.0F;
 			yOffset = 0.0F;
 		}
-		//System.out.println(xOffset + " || " + yOffset);
+
 		color = rgba;
 		renderer = getRenderer();
 		hasPhysics = type.hasPhysics();
@@ -84,7 +84,7 @@ public class Visual {
 		} else {
 			if(!isDead) {
 				timeLeft = timeLeft <= 0 ? timeLeft : timeLeft - 1;
-				//System.out.println(timeLeft + " time left for Visual " + this.visualType.toString());
+
 			}
 		}
 	}

@@ -24,7 +24,6 @@ public class MotionBlur extends Blur {
 			((MotionBlurOp) filter).setZoom(motionZoom * translucency);
 			long time = Minecraft.getSystemTime();
 			BufferedImage filtered = filter.filter(scaledImage, null);
-			System.out.println("Filter Time: " + (Minecraft.getSystemTime() - time));
 			image = prepareImage(filtered);
 		}
 	}

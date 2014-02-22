@@ -61,7 +61,6 @@ public class EnhancedVisuals {
     	try {
     		Visual initializer = new Visual(VisualType.splatter, 0);
     	} catch(NullPointerException e) {
-    		System.out.println("The mod could not load the Visuals, make sure the Theme Pack was installed correctly");
     		e.printStackTrace();
     	}
     	

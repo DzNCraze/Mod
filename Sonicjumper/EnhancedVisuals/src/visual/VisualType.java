@@ -70,13 +70,10 @@ public class VisualType {
 			hasPhysics = physics;
 			if(catagory != VisualCatagory.shader) {
 				createResources();
-				for(ResourceLocation s : resourceArray) {
-					System.out.println(s.getResourcePath());
-				}
 			} else {
 				resourceArray = new ResourceLocation[] {new ResourceLocation("sonicjumper", "textures/entity/steve.png")};
 			}
-			System.out.println(id + " || " + visualCatagory.toString() + " || " + name + " || " + resourceArray.length);
+			
 		}
 	}
 
@@ -85,30 +82,29 @@ public class VisualType {
 		try {
 			resourceArray = createResourcesForVisualType(this);
 		} catch(FileNotFoundException e) {
-			System.out.println("[Enhanced Visuals] Could not find the directory, make sure you installed the theme pack correctly: " + ClientProxy.getVisualsDirectory(themePack) + visualCatagory.toString() + "/" + visualName);
+			
 		}
 		if(resourceArray == null || (resourceArray != null && resourceArray.length == 0)) {
-			System.out.println("[Enhanced Visuals] Using backups for:" + visualName);
+			
 			themePack = ConfigCore.backupThemePack;
 			try {
 				resourceArray = createResourcesForVisualType(this);
 			} catch (FileNotFoundException e) {
-				System.out.println("[Enhanced Visuals] Error finding backup directory, make sure you installed the theme pack correctly: " + ClientProxy.getVisualsDirectory(themePack) + visualCatagory.toString() + "/" + visualName);
+				
 			}
 			if(resourceArray == null || (resourceArray != null && resourceArray.length == 0)) {
-				System.out.println("[Enhanced Visuals] Using defaults for:" + visualName);
+				
 				themePack = ConfigCore.defaultThemePack;
 				try {
 					resourceArray = createResourcesForVisualType(this);
 				} catch (FileNotFoundException e) {
-					System.out.println("[Enhanced Visuals] Error finding default directory, make sure you installed the mod correctly: " + ClientProxy.getVisualsDirectory(themePack) + visualCatagory.toString() + "/" + visualName);
+					
 				}
 			}
 		}
 	}
 
 	public static VisualType addNewType(int id, VisualCatagory catagory, String name, boolean physics) {
-		System.out.println("Adding id:" + id + " into catagory:" + catagory.toString() + " with name:" + name);
 		return new VisualType(id, catagory, name, physics);
 	}
 
@@ -116,7 +112,7 @@ public class VisualType {
 		List<ResourceLocation> result = new LinkedList<ResourceLocation>();
 
 		File f = new File(ClientProxy.getVisualsDirectory(themePack) + visualCatagory.toString() + "/" + visualName);
-		//System.out.println(f.exists() ? "File does exist" : "File doesn't exist");
+		
 		File[] list = f.listFiles();
 
 		if(list == null) {
@@ -136,7 +132,7 @@ public class VisualType {
 			try {
 				imageDimensions = getDimensionsOfImage(firstImage);
 			} catch (Exception e) {
-				System.out.println("[Enhanced Visuals] Could not read dimensions of image: " + f.getPath());
+				
 			}
 		} else {
 			imageDimensions = new Dimension(0, 0);
@@ -147,7 +143,6 @@ public class VisualType {
 
 	private Dimension getDimensionsOfImage(File resourceFile) throws IOException {
 		ImageInputStream in;
-		//System.out.println(resourceFile.getPath());
 		in = ImageIO.createImageInputStream(resourceFile);
 		try {
 			final Iterator readers = ImageIO.getImageReaders(in);

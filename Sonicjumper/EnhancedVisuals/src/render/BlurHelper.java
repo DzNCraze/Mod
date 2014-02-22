@@ -45,7 +45,7 @@ public class BlurHelper {
         long time = Minecraft.getSystemTime();
         intBuffer.clear();
         GL11.glReadPixels(0, 0, par1, par2, GL12.GL_BGRA, GL12.GL_UNSIGNED_INT_8_8_8_8_REV, intBuffer);
-        System.out.println("Read Pixels Time: " + (Minecraft.getSystemTime() - time));
+
         
         intBuffer.get(intDataArray);
         flipImage(intDataArray, par1, par2);
@@ -53,7 +53,7 @@ public class BlurHelper {
         time = Minecraft.getSystemTime();
         BufferedImage bufferedImage = new BufferedImage(par1, par2, 1);
         setRGB(bufferedImage, 0, 0, par1, par2, intDataArray);
-        System.out.println("New Image Creation Time: " + (Minecraft.getSystemTime() - time));
+ 
         
         return bufferedImage;
 	}
@@ -79,7 +79,7 @@ public class BlurHelper {
         GL11.glPixelTransferf(GL11.GL_RED_SCALE, 1f);
         GL11.glPixelTransferf(GL11.GL_GREEN_SCALE, 1f);
         GL11.glPixelTransferf(GL11.GL_BLUE_SCALE, 1f);
-        System.out.println("Read Pixels Time: " + (Minecraft.getSystemTime() - time));
+
         
         intBuffer.get(intDataArray);
         flipImage(intDataArray, par1, par2);
@@ -87,7 +87,7 @@ public class BlurHelper {
         time = System.nanoTime();
         BufferedImage bufferedImage = new BufferedImage(par1, par2, 1);
         setRGB(bufferedImage, 0, 0, par1, par2, intDataArray);
-        System.out.println("New Image Creation Time: " + (Minecraft.getSystemTime() - time));
+
         
         return bufferedImage;
 	}
@@ -113,7 +113,6 @@ public class BlurHelper {
         GL11.glPixelTransferf(GL11.GL_RED_SCALE, 1f);
         GL11.glPixelTransferf(GL11.GL_GREEN_SCALE, 1f);
         GL11.glPixelTransferf(GL11.GL_BLUE_SCALE, 1f);
-        System.out.println("Read Pixels Time: " + (Minecraft.getSystemTime() - time));
         
         byteBuffer.get(byteDataArray);
         flipImage(byteDataArray, par1, par2);

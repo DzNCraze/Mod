@@ -25,11 +25,9 @@ public class SoundHandler {
             // Try to add the custom sound file to the pool of sounds
             try {
                 event.manager.addSound(soundFile);
-                System.out.println("[Enhanced Visuals] Loaded sound file: " + soundFile);
             }
             // If we cannot add the custom sound file to the pool, log the exception
             catch (Exception e) {
-                System.out.println("[Enhanced Visuals] Failed loading sound file: " + soundFile);
             }
         }
     }*/
