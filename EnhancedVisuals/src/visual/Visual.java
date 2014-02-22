@@ -1,4 +1,4 @@
-package mods.Sonicjumper.EnhancedVisuals.src.visual;
+package Sonicjumper.EnhancedVisuals.src.visual;
 
 import java.awt.Color;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package mods.Sonicjumper.EnhancedVisuals.src.render;
+package Sonicjumper.EnhancedVisuals.src.render;
 
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.Tessellator;
