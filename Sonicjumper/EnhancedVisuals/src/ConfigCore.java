@@ -9,7 +9,7 @@ public class ConfigCore {
 	
 	public static String currentThemePack;
 	public static String backupThemePack;
-	public static String defaultThemePack = "DefaultTheme";
+	public static String defaultThemePack = "defaulttheme";
 	public static boolean shouldRenderBlur, useTrueGlow, grayscaleLowHealth;
 	public static float blurQuality;
 	

@@ -10,14 +10,14 @@ public class ClientProxy extends ServerProxy {
 	public void registerClientThings(FMLPreInitializationEvent event) {
 		TickRegistry.registerTickHandler(new TickHandler(), Side.CLIENT);
 		basePath = event.getSourceFile().getPath();
-		visualsDirectory = event.getSourceFile().getPath() + "/assets/minecraft/" + ConfigCore.currentThemePack + "/visuals/";
-		soundsDirectory = event.getSourceFile().getPath() + "/assets/minecraft/" + ConfigCore.currentThemePack + "/sounds/";
+		visualsDirectory = event.getSourceFile().getPath() + "/assets/sonicjumper/" + ConfigCore.currentThemePack + "/visuals/";
+		soundsDirectory = event.getSourceFile().getPath() + "/assets/sonicjumper/" + ConfigCore.currentThemePack + "/sounds/";
     	MinecraftForge.EVENT_BUS.register(EnhancedVisuals.instance.splatRenderer);
     	//MinecraftForge.EVENT_BUS.register(awarenessRenderer);
     	MinecraftForge.EVENT_BUS.register(EnhancedVisuals.instance.visualEventHandler);
 	}
 	
 	public static String getVisualsDirectory(String themePack) {
-		return basePath + "/assets/minecraft/" + themePack + "/visuals/";
+		return basePath + "/assets/sonicjumper/" + themePack + "/visuals/";
 	}
 }
