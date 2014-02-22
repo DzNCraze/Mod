@@ -22,7 +22,7 @@ public class RenderVisual {
 		}
 		ScaledResolution scaledRes = new ScaledResolution(EnhancedVisuals.mc.gameSettings, EnhancedVisuals.mc.displayWidth, EnhancedVisuals.mc.displayHeight);
 		GL11.glColor4f(v.getColor().getRed() / 255.0F, v.getColor().getGreen() / 255.0F, v.getColor().getBlue() / 255.0F, v.getTranslucency());
-		EnhancedVisuals.mc.func_110434_K().func_110577_a(v.getResource());
+		EnhancedVisuals.mc.renderEngine.bindTexture(v.getResource());
 		Tessellator var3 = Tessellator.instance;
         var3.startDrawingQuads();
         var3.addVertexWithUV(0.0D + (v.getXOffset() * scaledRes.getScaledWidth_double()), (double)v.getHeight() + (v.getYOffset() * scaledRes.getScaledHeight_double()), -90.0D, 0.0D, 1.0D);

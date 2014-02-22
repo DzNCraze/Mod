@@ -19,7 +19,7 @@ public class RenderBlur extends RenderVisual {
 			reset = true;
 		}
 		Blur b = (Blur) v;
-		EnhancedVisuals.mc.func_110434_K().func_110577_a(v.getResource());
+		EnhancedVisuals.mc.renderEngine.bindTexture(v.getResource());
 		GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGB8, b.getImageWidth(), b.getImageHeight(), 0, GL11.GL_RGB, GL11.GL_UNSIGNED_BYTE, b.getBufferedImage());
 		ScaledResolution scaledRes = new ScaledResolution(EnhancedVisuals.mc.gameSettings, EnhancedVisuals.mc.displayWidth, EnhancedVisuals.mc.displayHeight);
 		GL11.glColor4f(v.getColor().getRed() / 255.0F, v.getColor().getGreen() / 255.0F, v.getColor().getBlue() / 255.0F, v.getTranslucency());
