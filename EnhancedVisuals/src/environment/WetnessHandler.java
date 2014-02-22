@@ -1,8 +1,7 @@
-package mods.Sonicjumper.EnhancedVisuals.src.environment;
+package Sonicjumper.EnhancedVisuals.src.environment;
 
-import net.minecraft.client.Minecraft;
-import mods.Sonicjumper.EnhancedVisuals.src.event.VisualEventHandler;
-import mods.Sonicjumper.EnhancedVisuals.src.visual.VisualManager;
+import Sonicjumper.EnhancedVisuals.src.event.VisualEventHandler;
+import Sonicjumper.EnhancedVisuals.src.visual.VisualManager;
 
 public class WetnessHandler extends BaseEnvironmentEffect {
 	private float wetness;
